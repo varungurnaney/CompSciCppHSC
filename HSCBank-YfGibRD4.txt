@@ -1,0 +1,90 @@
+#include<iostream.h>
+#include<conio.h>
+
+class account
+{       public:
+	int no;
+	int bal;
+	public:
+	account()
+	{bal=5000;}
+	void deposit(int val);
+	int withdraw(int val);
+	void checkbal();
+	void giveoptions();
+
+};
+void account:: deposit(int val)
+	{
+	 bal+=val;
+	}
+
+int account::  withdraw(int val)
+	{
+	 bal-=val;
+	 return val;
+	}
+
+void account:: checkbal()
+	{
+	cout<<"balance is"<<bal<<endl;
+	}
+
+
+void account :: giveoptions()
+{
+ int ch=0,val;
+ while(ch!=4)
+ {
+ cout<<"MENU \n 1.Deposist 2.Withdraw \n 3.Checkbal\n4.Exit"<<endl;
+ cin>>ch;
+
+ switch(ch)
+ {
+ case 1:cout<<"\nenter value to deposit\n";
+	cin>>val;
+	deposit(val);
+	checkbal();
+	break;
+
+ case 2:cout<<"\nEnter value to withdraw\n";
+	cin>>val;
+	if(bal<=val+5000)
+	{
+	cout<<"\nCannot withdraw. You're poor\n";
+	break;
+	}
+	cout<<"\nCollect your money"<<withdraw(val);
+	checkbal();
+	break;
+
+ case 3: checkbal();
+	break;
+ case 4: break;
+ default: break;
+ }
+ }
+}
+
+void main()
+{
+clrscr();
+int n;
+account a1,a2,a3;
+a1.no=123;
+a2.no=456;
+a3.no=789;
+for(int i=0;i<3;i++)
+{
+cout<<"Enter account number"<<endl;
+cin>>n;
+if(n==123)
+{a1.giveoptions();}
+if(n==456)
+{a2.giveoptions();}
+if(n==789)
+{a3.giveoptions();}
+
+}
+getch();
+}

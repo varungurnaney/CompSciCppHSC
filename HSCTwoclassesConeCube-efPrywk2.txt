@@ -1,0 +1,71 @@
+#include<iostream.h>
+#include<conio.h>
+
+class cone
+{
+float r,h,l;
+public:
+float area(float r,float l);
+float vol(float r,float h);
+};
+
+class cube
+{
+float l;
+public:
+float area(float l);
+float vol(float l);
+};
+
+float cone::area(float r,float l)
+{
+	float acone = 3.14*r*l;
+	cout<<acone<<endl;
+	return acone;
+}
+float cone::vol(float r,float h)
+{
+	float vcone=0.333*r*r*h*3.14;
+	cout<<vcone<<endl;
+	return vcone;
+}
+
+float cube::area(float l)
+{
+	float acube=6*l*l;
+	cout<<acube<<endl;
+	return acube;
+}
+
+float cube::vol(float l)
+{
+	float vcube=l*l*l;
+	cout<<vcube<<endl;
+	return vcube;
+}
+
+void add(float x, float y)
+{
+	float z = x+y;
+	cout<<"The sum is"<<z<<endl;
+}
+
+
+void main()
+{
+float r,lco,lcu,h,ra1,rv1,ra2,rv2;
+clrscr();
+cone co;
+cube cu;
+cout<<"Enter r,l,h of cone"<<endl;
+cin>>r>>lco>>h;
+cout<<"Enter l for cube:"<<endl;
+cin>>lcu;
+ra1=co.area(r,lco);
+rv1=co.vol(r,h);
+ra2=cu.area(lcu);
+rv2=cu.vol(lcu);
+add(ra1,ra2);
+add(rv1,rv2);
+getch();
+}

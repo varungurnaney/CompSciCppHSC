@@ -1,0 +1,54 @@
+#include<iostream.h>
+#include<conio.h>
+
+class Complex
+{
+double real;
+double imag;
+public:
+	Complex()
+		{
+		real=1;
+		imag=1;
+
+		}
+
+		void setvalue()
+		{
+		cout<<"Enter real and imag part"<<endl;
+		cin>>real>>imag;
+
+		}
+
+		void display()
+		{
+		cout<<"Complex number is"<<endl;
+		cout<<real<<"+"<<imag<<"i"<<endl;
+		}
+	Complex operator+(Complex);
+
+
+};
+
+Complex Complex::operator+(Complex other)
+{   Complex result;
+    result.real = real + other.real;
+    result.imag = imag + other.imag;
+    return result;
+}
+
+
+void main()
+{
+clrscr();
+Complex x,y,z;
+y.setvalue();
+x.display();
+y.display();
+z=x+y;
+z.display();
+getch();
+
+
+
+}

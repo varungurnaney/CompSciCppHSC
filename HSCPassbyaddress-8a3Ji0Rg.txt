@@ -1,0 +1,38 @@
+#include <iostream.h>
+#include<conio.h>
+
+
+// function declaration
+void swap(int *x, int *y);
+
+int main ()
+{
+	clrscr();
+   int a = 100;
+   int b = 200;
+
+   cout << "Before swap, value of a :" << a << endl;
+   cout << "Before swap, value of b :" << b << endl;
+
+   /* calling a function to swap the values using variable reference.*/
+   swap(&a,&b);
+
+   cout << "After swap, value of a :" << a << endl;
+   cout << "After swap, value of b :" << b << endl;
+  getch();
+   return 0;
+
+}
+
+
+void swap(int *x, int *y)
+{
+cout<<x<<endl;
+cout<<y<<endl;
+   int temp;
+   temp = *x; /* save the value at address x */
+   *x = *y;    /* put y into x */
+   *y = temp; /* put x into y */
+	cout<<*x<<endl<<*y<<endl;
+   
+}

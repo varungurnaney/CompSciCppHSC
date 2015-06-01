@@ -1,0 +1,76 @@
+/* A virtual member is a member function that can be redefined in a derived class, while preserving its calling properties through references. The syntax for a function to become virtual is to precede its declaration with the virtual keyword:
+*/
+
+#include<iostream.h>
+#include<conio.h>
+
+
+class vehicle
+{
+protected: float mileage;
+public:
+	vehicle(float m1)
+	{
+	mileage=m1;
+	}
+
+	virtual void display()
+	{
+	cout<<"vehicle details:\n";
+	}
+
+};
+
+
+class two:public vehicle
+{
+char clutch;
+public:
+	two(float m1,char c):vehicle(m1)
+	{
+	clutch=c;
+	}
+
+	void display()
+	{
+	 cout<<"\nMileage: "<<mileage;
+	 cout<<"\nClutch: "<<clutch;
+	 }
+};
+
+class four:public vehicle
+{
+	char ac;
+	public:
+	  four(float m1, char c):vehicle(m1)
+	  {
+	  ac=c;
+	  }
+
+	  void display()
+	  {
+
+	 cout<<"\nMileage:"<<mileage;
+	 cout<<"\nAC:"<<ac;
+	 }
+};
+
+
+void main()
+{
+vehicle *b;
+clrscr();
+
+two activa(40,'y');
+b=&activa;
+b->display();
+
+four maruti(17,'n');
+b=&maruti;
+b->display();
+
+four bmw(5,'y');
+b=&bmw;
+b->display();
+getch();
+}

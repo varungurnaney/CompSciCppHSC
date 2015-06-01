@@ -1,0 +1,53 @@
+#include <iostream.h>
+#include<conio.h>
+
+class Ratio
+{
+int n,d;
+public:
+void setvalue();
+double convert();
+void invert();
+void display();
+};
+
+void Ratio::setvalue()
+{
+cout<<"Enter N and D"<<endl;
+cin>>n>>d;
+}
+
+double Ratio::convert()
+{
+return(n/double(d));
+}
+
+void Ratio :: invert()
+{
+int temp=n;
+n=d;
+d=temp;
+}
+
+void Ratio :: display()
+{
+cout<<"Ratio is :";
+cout<<n<<"/"<<d<<endl;
+}
+
+
+
+
+void main()
+{
+clrscr();
+Ratio r1;
+r1.setvalue();
+r1.display();
+cout<<"Converted: "<<r1.convert()<<endl;
+r1.invert();
+r1.display();
+r1.invert();
+r1.display();
+getch();
+}
